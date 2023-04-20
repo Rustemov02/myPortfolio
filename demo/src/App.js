@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import { BrowserRouter } from 'react-router-dom'
 import Inform from './Inform'
 import Services from './Services'
+import Projects from './Projects'
 
 export default function App() {
 
@@ -50,6 +51,7 @@ export default function App() {
           <Navbar />
           <Inform/>
           <Services/>
+          <Projects/>
         </Stack>
       </BrowserRouter>
     </ThemeProvider>
