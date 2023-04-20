@@ -3,6 +3,7 @@ import { Stack, ThemeProvider, createTheme } from '@mui/material'
 import Navbar from './Navbar'
 import { BrowserRouter } from 'react-router-dom'
 import Inform from './Inform'
+import Services from './Services'
 
 export default function App() {
 
@@ -45,9 +46,10 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Stack>
+        <Stack bgcolor='#0c2235'>
           <Navbar />
           <Inform/>
+          <Services/>
         </Stack>
       </BrowserRouter>
     </ThemeProvider>
