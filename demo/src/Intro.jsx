@@ -32,7 +32,7 @@ const styles = {
 
 export default function Intro() {
  
-    return (
+    return (    
         <Stack direction='column' alignItems='center' gap={1} sx={styles.common}>
             <Typography variant='h4' sx={styles.header}>Welcome</Typography>
             <Typography sx={{...styles.text ,fontSize : '50px'}}>I'm <span style={{color : '#EF3724'}}>Benjamin</span> Rustamov</Typography>

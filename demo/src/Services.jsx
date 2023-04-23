@@ -9,7 +9,7 @@ export default function Services() {
 
             <Box textAlign='center'>
                 <Typography fontSize='14px' color="#FFFFFF99" fontFamily='Poppins'>What I Offer</Typography>
-                <Typography fontSize='35px' variant='h2' color='#4db5ff' fontFamily='Poppins'>Services</Typography>
+                <Typography fontSize='24px' variant='h2' color='#4db5ff' fontFamily='Poppins'>Services</Typography>
             </Box>
 
             <ServicesList />

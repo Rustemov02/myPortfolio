@@ -18,11 +18,13 @@
   z-index: 11;
   transform: rotate(90deg);
   font-family: 'Poppins', sans-serif;
-
 }
 
-@media (max-width: 1050px) {
-  .heroEmail {
-    display: none;
-  }
+ 
+
+@media (max-width: 820px) {
+  .common{
+    flex-direction: column;
+    border: solid red 1px;
+  } 
 }

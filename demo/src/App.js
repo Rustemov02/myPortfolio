@@ -2,11 +2,11 @@ import React from 'react'
 import { Stack, ThemeProvider, createTheme } from '@mui/material'
 import Navbar from './Navbar'
 import { BrowserRouter } from 'react-router-dom'
-import Inform from './Inform'
+import Skills from './Skills'
 import Services from './Services'
 import Projects from './Projects'
 import Contact from './Contact'
-import Skills from './Skills'
+import Profil from './Profil'
 
 export default function App() {
 
@@ -51,11 +51,11 @@ export default function App() {
       <BrowserRouter>
         <Stack bgcolor='#0c2235'>
           <Navbar />
-          <Inform/>
-          <Services/>
-          <Skills/>
-         <Projects/>
-          <Contact/>  
+          <Profil/>
+          <Skills />
+          <Services />
+          <Projects />
+          <Contact />
         </Stack>
       </BrowserRouter>
     </ThemeProvider>
