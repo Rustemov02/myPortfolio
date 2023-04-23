@@ -1,7 +1,6 @@
 import { Stack, Typography, Box, Button } from '@mui/material'
 import React from 'react'
 import './Inform.css'
-// import myImg from './images/cutterMe.png'
 import me from './images/me.png'
 export default function Inform() {
 
@@ -19,11 +18,11 @@ export default function Inform() {
     return (
         <Stack position='relative' borderColor='#FFFFFF'  direction='row-reverse' py={5} px={3} alignItems='center' justifyContent='space-evenly' flexWrap='wrap'>
 
-            <Box sx={{ width: '25%', minWidth: '300px' }}>
+            <Box sx={{ width: '25%', minWidth: '250px'}}>
                 <img src={me} style={customImg} />
             </Box>
 
-            <Stack width='50%' minWidth={400} direction='column' alignItems='flex-start' gap={2} px={5} py={3}>
+            <Stack width='50%' minWidth={200} direction='column' alignItems='flex-start' gap={2} px={5} py={3}>
                 <Typography sx={typographyStyle} fontSize={19} >Benjamin Rustamov</Typography>
                 <Typography fontSize={32} sx={typographyStyle}>&lt;Front End Developer /&gt; </Typography>
 

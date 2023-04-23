@@ -37,12 +37,7 @@ export default function Header() {
         fontFamily: 'Open Sans, sans-serif',
         padding : '14px 10px' 
          
-    }
-
-
-
-
-
+    } 
     const handleMenu = () => {
         setShowMenu(!showMenu)
         console.log('ok')

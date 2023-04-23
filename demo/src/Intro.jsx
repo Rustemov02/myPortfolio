@@ -11,8 +11,9 @@ const styles = {
         transform: 'translate(-50%, -50%)',
         textAlign : 'center',
         color: "#fff",
-        width : 'auto',
-        minWidth : '400px'
+        width : '70%',
+        minWidth : '270px',
+        height : '275px', 
     },
     header: {
         fontFamily: 'Open Sans, sans-serif' , 
@@ -20,7 +21,7 @@ const styles = {
     text: { 
         // fontFamily : 'Quicksand sans-serif' , 
         fontFamily : 'Montserrat , sans-serif',
-        fontWeight : 600
+        fontWeight : 600,
     },
     title : { 
         backgroundColor : 'rgba(239,56,36,0.15)',

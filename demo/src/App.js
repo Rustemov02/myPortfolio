@@ -5,6 +5,8 @@ import { BrowserRouter } from 'react-router-dom'
 import Inform from './Inform'
 import Services from './Services'
 import Projects from './Projects'
+import Contact from './Contact'
+import Skills from './Skills'
 
 export default function App() {
 
@@ -51,7 +53,9 @@ export default function App() {
           <Navbar />
           <Inform/>
           <Services/>
-          <Projects/>
+          <Skills/>
+         <Projects/>
+          <Contact/>  
         </Stack>
       </BrowserRouter>
     </ThemeProvider>
