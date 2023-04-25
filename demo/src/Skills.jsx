@@ -60,7 +60,7 @@ export default function Skills() {
     const typographyStyle = {
         fontFamily: 'Poppins',
         color: '#EDEDED',
-        fontWeight: 600, 
+        fontWeight: 600,
     }
     const customBox = {
         borderRadius: "20px",
@@ -69,7 +69,7 @@ export default function Skills() {
         minWidth: '250px',
         border: 'solid transparent 2px',
     }
-    
+
 
     return (
         <Stack py={6} gap={4}>
@@ -78,12 +78,12 @@ export default function Skills() {
                 <Typography fontSize='24px' variant='h2' color='#4db5ff' fontFamily='Poppins'>My Experiences</Typography>
             </Box>
             {/*  py={5} px={3} */}
-            <Stack sx={{display: 'flex', flexDirection: 'row-reverse',alignItems: 'flex-start',justifyContent: 'space-evenly' , '@media (max-width : 800px)' : {flexDirection : 'column'} }} position='relative' >
-
-                
+            <Stack sx={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'flex-start', justifyContent: 'space-evenly', '@media (max-width : 800px)': { flexDirection: 'column' } }} position='relative' >
 
 
-                <Stack direction='column' sx={{...customBox , '@media (max-width : 800px)' : {width : '80%'} }}    gap={5} >
+
+
+                <Stack direction='column' sx={{ ...customBox, '@media (max-width : 800px)': { width: '80%' } }} gap={5} >
                     <Typography fontSize={32} sx={typographyStyle}>Current Skills</Typography>
 
                     <Stack direction='row' flexWrap='wrap' justifyContent='flex-start' gap={1}>
@@ -96,8 +96,8 @@ export default function Skills() {
                     </Stack>
                 </Stack>
 
-                <Stack  sx={{'@media (max-width : 800px)' : {width : '80%'} }} width='50%' minWidth={200} direction='column' alignItems='flex-start' gap={6} px={3} py={3}>
-                  
+                <Stack sx={{ '@media (max-width : 800px)': { width: '80%' } }} width='50%' minWidth={200} direction='column' alignItems='flex-start' gap={6} px={3} py={3}>
+
                     <Typography fontSize={32} sx={typographyStyle}>&lt;Front End Developer /&gt; </Typography>
 
                     <Stack width='auto' gap={2} >

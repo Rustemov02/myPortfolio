@@ -7,6 +7,7 @@ import Services from './Services'
 import Projects from './Projects'
 import Contact from './Contact'
 import Profil from './Profil'
+import AboutMe from './AboutMe'
 
 export default function App() {
 
@@ -51,11 +52,13 @@ export default function App() {
       <BrowserRouter>
         <Stack bgcolor='#0c2235'>
           <Navbar />
-          <Profil/>
-          <Skills />
+          {/* <Profil/> */}
+          <AboutMe/>
+          {/* <Skills /> */}
           <Services />
           <Projects />
           <Contact />
+          
         </Stack>
       </BrowserRouter>
     </ThemeProvider>
