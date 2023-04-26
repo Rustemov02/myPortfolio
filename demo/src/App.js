@@ -8,7 +8,9 @@ import Projects from './Projects'
 import Contact from './Contact'
 import Profil from './Profil'
 import AboutMe from './AboutMe'
-
+import Footer from './Footer'
+import Nav from './Nav'
+import Experience from './Experience'
 export default function App() {
 
   const theme = createTheme({
@@ -52,13 +54,15 @@ export default function App() {
       <BrowserRouter>
         <Stack bgcolor='#0c2235'>
           <Navbar />
+          <Nav/>
           {/* <Profil/> */}
           <AboutMe/>
+          <Experience/>
           {/* <Skills /> */}
           <Services />
           <Projects />
           <Contact />
-          
+          <Footer/>
         </Stack>
       </BrowserRouter>
     </ThemeProvider>

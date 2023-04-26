@@ -14,10 +14,10 @@ export default function Navbar() {
       backgroundSize: 'cover',
       filter: 'brightness(20%)',
       height: "100vh",
-      display : 'flex' ,
-      flexDirection  : "row" ,
-      alignItems : 'center',
-      justifyContent : 'center'
+      display: 'flex',
+      flexDirection: "row",
+      alignItems: 'center',
+      justifyContent: 'center'
     }
   }
 
@@ -28,7 +28,7 @@ export default function Navbar() {
       </Stack>
 
       <Header />
-        <Intro/>
+      <Intro />
 
 
     </Stack>

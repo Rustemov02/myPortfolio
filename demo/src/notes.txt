@@ -1,1 +1,4 @@
 1 => collect all data in same file
+2 => LOGO
+3 => Loading site
+4 => Typical
