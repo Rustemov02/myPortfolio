@@ -75,8 +75,8 @@ export default function ServicesList() {
                         <Typography cursor='none' fontFamily='Poppins' fontWeight={600} fontSize={20}>{item.title}</Typography>
                     </Box>
 
-                    {item.paragraphs.map(paragraph => (
-                        <Stack direction='row' gap={1} p={2}>
+                    {item.paragraphs.map((paragraph,key) => (
+                        <Stack  key={key} direction='row' gap={1} p={2}>
                             <CheckOutlinedIcon sx={{ fontSize: '14px', color: '#4db5ff' }} />
                             <Typography color='#FFFFFF' fontSize={15} fontFamily='Poppins' fontWeight={500}>{paragraph}</Typography>
                         </Stack>

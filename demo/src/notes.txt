@@ -2,3 +2,5 @@
 2 => LOGO
 3 => Loading site
 4 => Typical
+5 => get the certificate of bootcamp +++
+6 => movieOrganizer - add link !!!

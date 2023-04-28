@@ -1,7 +1,7 @@
 import React from 'react'
 import { Stack, ThemeProvider, createTheme } from '@mui/material'
 import Navbar from './Navbar'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter , Route , Routes} from 'react-router-dom'
 import Skills from './Skills'
 import Services from './Services'
 import Projects from './Projects'
@@ -53,16 +53,12 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Stack bgcolor='#0c2235'>
-          <Navbar />
-          <Nav/>
-          {/* <Profil/> */}
-          <AboutMe/>
-          <Experience/>
-          {/* <Skills /> */}
-          <Services />
-          <Projects />
-          <Contact />
-          <Footer/>
+          <Routes>
+            <Route path='/home' element={<Navbar />} />
+            <Route path='/about' element={<AboutMe />} />
+            <Route path='/portfolio' element={<Profil />} />
+            <Route path='/contact' element={<Contact />} /> 
+          </Routes>  
         </Stack>
       </BrowserRouter>
     </ThemeProvider>

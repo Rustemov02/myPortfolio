@@ -55,7 +55,7 @@ export default function Header() {
                 <Typography color='white' fontSize='1.25rem'>V-R0lio</Typography>
 
                 <Stack direction='row' sx={{ '@media (max-width : 900px)': { display: "none" } }} gap={2}>
-                    {['Home', 'About', 'Portfolio', 'Blog', 'Contact'].map((item, index) => (
+                    {['Home', 'About', 'Portfolio','Contact'].map((item, index) => (
                         <Link key={index} to={'/' + item.toLowerCase()} onClick={() => handleSetActive(item)} style={{ color: '#FFFFFF',fontSize : '20px',fontFamily: 'Open Sans, sans-serif',textDecoration : 'none', opacity: active === item ? 1 : 0.5 }}>{item}</Link>
                     ))}
                 </Stack>

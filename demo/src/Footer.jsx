@@ -28,7 +28,7 @@ export default function Footer() {
 
             <Stack direction='row' justifyContent='center' flexWrap='wrap' gap={4}>
                 {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map((item, index) => (
-                    <Typography fontSize={16} fontFamily='Poppins' fontWeight="600" sx={{cursor : "pointer" ,transition : '0.5s' ,'&:hover':{color : '#FFF'}}}>{item}</Typography>
+                    <Typography key={index} fontSize={16} fontFamily='Poppins' fontWeight="600" sx={{cursor : "pointer" ,transition : '0.5s' ,'&:hover':{color : '#FFF'}}}>{item}</Typography>
                 ))}
             </Stack>
 
