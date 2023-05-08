@@ -1,16 +1,23 @@
-import React from 'react'
-import { Stack, ThemeProvider, createTheme } from '@mui/material'
-import Navbar from './Navbar'
-import { BrowserRouter , Route , Routes} from 'react-router-dom'
-import Skills from './Skills'
-import Services from './Services'
-import Projects from './Projects'
-import Contact from './Contact'
-import Profil from './Profil'
-import AboutMe from './AboutMe'
-import Footer from './Footer'
-import Nav from './Nav'
-import Experience from './Experience'
+import React, { useState, useEffect } from 'react'
+import { Stack, Button , ThemeProvider, createTheme } from '@mui/material'
+import Navbar from './components/Navbar/Navbar'
+import Services from './components/Services/Services'
+import Projects from './components/Project/Projects'
+import Contact from './components/Contact/Contact'
+import AboutMe from './components/AboutMe/AboutMe'
+import Footer from './components/Footer/Footer'
+import Nav from './components/Navbar/Nav'
+import Experience from './components/Experience/Experience'
+import { HashLoader } from 'react-spinners' 
+import AOS from 'aos'
+import 'aos/dist/aos.css';
+AOS.init({
+  duration: 1200,
+  once : true
+});
+
+
+
 export default function App() {
 
   const theme = createTheme({
@@ -49,18 +56,32 @@ export default function App() {
     }
   })
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 3000);
+  }, []);
+ 
+
+
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      {loading ? (
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+          <HashLoader color="#36d7b7" />
+        </div>
+      ) : (
         <Stack bgcolor='#0c2235'>
-          <Routes>
-            <Route path='/home' element={<Navbar />} />
-            <Route path='/about' element={<AboutMe />} />
-            <Route path='/portfolio' element={<Profil />} />
-            <Route path='/contact' element={<Contact />} /> 
-          </Routes>  
+          <Navbar /> 
+          <Nav /> 
+          <AboutMe />
+          <Experience />
+          <Projects />
+          <Services />
+          <Contact />
+          <Footer />
         </Stack>
-      </BrowserRouter>
+      )}
     </ThemeProvider>
   )
 }

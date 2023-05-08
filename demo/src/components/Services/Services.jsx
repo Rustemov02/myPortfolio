@@ -5,7 +5,7 @@ import ServicesList from './ServicesList'
 export default function Services() {
 
     return (
-        <Stack direction='column' py={10} gap={5}>
+        <Stack id='services' direction='column' py={10} gap={5}>
 
             <Box textAlign='center'>
                 <Typography fontSize='14px' color="#FFFFFF99" fontFamily='Poppins'>What I Offer</Typography>
