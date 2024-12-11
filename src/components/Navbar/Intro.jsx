@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Typography } from '@mui/material'
 import React from 'react' 
-import cv from '../../assets/images/Frontend_CV.pdf'
+import cv from '../../assets/Frontend CV.pdf'
 import { Link as ScrollLink } from 'react-scroll'
 import SvgIntroImg from '../../assets/icon/IntroImg'
 

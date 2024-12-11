@@ -1,7 +1,6 @@
 import React from 'react'
-import { Stack, Box, Typography } from '@mui/material'
-import preview from '../../assets/images/preview.jpg'
-import CvImg from '../../assets/images/CvImg.jpeg'
+import { Stack, Box, Typography } from '@mui/material' 
+import CvImg from '../../assets/images/me-3.jpg'
 import info from './AboutData'
 
 export default function AboutMe() {
