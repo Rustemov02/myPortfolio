@@ -5,8 +5,22 @@ import weather from "../../assets/images/weather.png";
 import kitchen from "../../assets/images/kitchen.jpg";
 import birilmek from "../../assets/images/wallpaper.jpg";
 import etihi from "../../assets/images/etihi.png";
+import siesco from "../../assets/images/siesco.png";
+import edu from "../../assets/images/edujpg.jpg";
 
 const projectData = [
+  {
+    image: siesco,
+    title: "SIESCO",
+    demo: "https://edu.siesco.studio/#/landing",
+    duration: 1200,
+  },
+  {
+    image: edu,
+    title: "EDU",
+    demo: "https://siesco.az/",
+    duration: 1200,
+  },
   {
     image: etihi,
     title: "ETIHI.org",
