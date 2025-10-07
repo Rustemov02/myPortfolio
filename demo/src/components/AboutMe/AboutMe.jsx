@@ -1,6 +1,6 @@
 import React from 'react'
-import { Stack, Box, Typography } from '@mui/material'
-import preview from '../../assets/images/preview.jpg'
+import { Stack, Box, Typography } from '@mui/material' 
+import CvImg from '../../assets/images/me-3.jpg'
 import info from './AboutData'
 
 export default function AboutMe() {
@@ -20,7 +20,7 @@ export default function AboutMe() {
         },
     }
     const customImg = {
-        width: '100%',
+        width: '110%',
         height: '100%',
         minWidth: '200px',
         borderRadius: '12px',
@@ -45,7 +45,7 @@ export default function AboutMe() {
             <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '80%', margin: "auto", '@media ( max-width : 1055px)': { flexDirection: 'column', gap: 7, width: '100%' } }}   >
 
                 <Box sx={{ ...customBox }} data-aos="fade-right" data-aos-duration="1500">
-                    <img src={preview} style={customImg} />
+                    <img src={CvImg} style={customImg} />
                 </Box>
                 <Stack data-aos="fade-left" data-aos-once="true" data-aos-duration="1500" gap={4} sx={{ width: "50%", display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'space-evenly', '@media (max-width : 1055px)': { width: '90%' } }} position='relative' >
 

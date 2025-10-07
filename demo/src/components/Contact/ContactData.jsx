@@ -12,7 +12,7 @@ const info = [
         icon: <Telegram sx={{ color: '#FFF' }} />,
         title: 'Telegram',
         address: "rustemov02",
-        link: 'https://t.me/rustemov02',
+        link: 'https://t.me/rustemovb0' ,
         duration: 1000
     },
     {
