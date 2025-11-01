@@ -12,15 +12,15 @@ const Navigation = () => {
   ];
 
   const [activeSection, setActiveSection] = useState("home");
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const scrollToSection = (section: string) => {
     setActiveSection(section.substring(1));
   };
-
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        console.log("scrolled bro !");
+        setScrolled(true);
       }
 
       const sections = navItems.map((item) => item.href.substring(1));
@@ -47,8 +47,7 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        // scrolled
-        true
+        scrolled
           ? "bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-lg"
           : "bg-transparent"
       }`}
