@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+
+/* Ümumi scroll üçün */
+::-webkit-scrollbar {
+  width: 6px;          /* Yatay/şaquli scrollbar qalınlığı */
+  height: 6px;         /* Yatay scrollbar üçün */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track fonu */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.5); /* Scroll bar rəngi */
+  border-radius: 10px;       /* Yuvarlaq kənarlar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.7); /* Hover zamanı */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;                   /* incə scrollbar */
+  scrollbar-color: rgba(100,100,100,0.5) transparent; /* thumb və track */
+}

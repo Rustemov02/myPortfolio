@@ -4,7 +4,7 @@ import Badge from "../components/Badge";
 import CustomDialog from "../components/CustomDialog";
 import { useState } from "react";
 
-interface Project {
+export interface Project {
   id: number;
   title: string;
   description: string;
@@ -13,7 +13,6 @@ interface Project {
   tags: string[];
   liveUrl: string;
   githubUrl: string;
-  category: string;
 }
 
 const Projects = () => {
@@ -30,7 +29,6 @@ const Projects = () => {
       tags: ["React", "TypeScript", "Recharts", "Tailwind CSS"],
       liveUrl: "#",
       githubUrl: "#",
-      category: "Web App",
     },
     {
       id: 2,
@@ -44,7 +42,6 @@ const Projects = () => {
       tags: ["React Native", "Node.js", "Express", "MongoDB"],
       liveUrl: "#",
       githubUrl: "#",
-      category: "Mobile App",
     },
     {
       id: 3,
@@ -57,7 +54,6 @@ const Projects = () => {
       tags: ["Next.js", "Stripe", "PostgreSQL", "Prisma"],
       liveUrl: "#",
       githubUrl: "#",
-      category: "Web App",
     },
   ];
   const [isOpen, setIsOpen] = useState(false);
@@ -144,7 +140,11 @@ const Projects = () => {
       </div>
 
       {/* Project Details Modal */}
-      <CustomDialog open={isOpen} onOpenChange={() => setIsOpen(false)} />
+      <CustomDialog
+        data={projects[2]}
+        open={isOpen}
+        onOpenChange={() => setIsOpen(false)}
+      />
     </section>
   );
 };
