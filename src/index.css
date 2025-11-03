@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
-
 /* Ümumi scroll üçün */
 ::-webkit-scrollbar {
-  width: 6px;          /* Yatay/şaquli scrollbar qalınlığı */
-  height: 6px;         /* Yatay scrollbar üçün */
+  width: 6px; /* Yatay/şaquli scrollbar qalınlığı */
+  height: 6px; /* Yatay scrollbar üçün */
 }
 
 ::-webkit-scrollbar-track {
@@ -13,7 +12,7 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: rgba(100, 100, 100, 0.5); /* Scroll bar rəngi */
-  border-radius: 10px;       /* Yuvarlaq kənarlar */
+  border-radius: 10px; /* Yuvarlaq kənarlar */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -22,6 +21,15 @@
 
 /* Firefox */
 * {
-  scrollbar-width: thin;                   /* incə scrollbar */
-  scrollbar-color: rgba(100,100,100,0.5) transparent; /* thumb və track */
+  scrollbar-width: thin; /* incə scrollbar */
+  scrollbar-color: rgba(100, 100, 100, 0.5) transparent; /* thumb və track */
+}
+
+/* Remove Chrome autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.05) inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 9999s ease-in-out 0s;
 }

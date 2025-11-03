@@ -5,6 +5,7 @@ interface InputType extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   className?: string;
   variant?: "default";
+  error?: string;
 }
 
 const Input = ({
@@ -15,6 +16,7 @@ const Input = ({
   className,
   variant = "default",
   placeholder,
+  error,
   ...props
 }: InputType) => {
   const styles = {
@@ -40,6 +42,7 @@ const Input = ({
         )}
         {...props}
       />
+      {error && <p className="text-red-400 text-sm mt-1">{error}</p>}
     </div>
   );
 };

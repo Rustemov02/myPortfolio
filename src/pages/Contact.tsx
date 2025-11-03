@@ -10,7 +10,13 @@ import {
   Twitter,
 } from "lucide-react";
 import Input from "../components/Input";
-import { cn } from "../utils/cn";
+import { useForm, Controller } from "react-hook-form";
+
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 const Contact = () => {
   const socialLinks = [
@@ -36,8 +42,42 @@ const Contact = () => {
     { icon: MapPin, text: "San Francisco, CA", color: "text-pink-400" },
   ];
 
-  const handleSubmit = () => {};
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormData>({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
 
+  const onSubmit = async (data: FormData) => {
+    console.log(data);
+    try {
+      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+
+    reset();
+  };
   return (
     <section
       id="contact"
@@ -68,48 +108,64 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="glass-card p-8 rounded-2xl border border-white/10 backdrop-blur-md bg-white/5 shadow-xl">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                 {/* Name Field */}
                 <div className="space-y-2">
-                  <Input
-                    label="Name"
-                    value=""
-                    placeholder="Your name"
-                    // className={//   "shadow-lg shadow-purple-500/20"}
-                    onChange={() => {}}
+                  <Controller
+                    name="name"
+                    control={control}
+                    rules={{ required: "Name is required" }}
+                    render={({ field }) => (
+                      <Input
+                        label="Name"
+                        placeholder="Your name"
+                        {...field}
+                        error={errors.name && errors.name.message}
+                      />
+                    )}
                   />
                 </div>
 
                 {/* Email Field */}
                 <div className="space-y-2">
-                  <Input
-                    label="Mail"
-                    value=""
-                    placeholder="your.email@example.com"
-                    // className={//   "shadow-lg shadow-purple-500/20"}
-                    onChange={() => {}}
-                  />
-                </div>
-
-                {/* Subject Field */}
-                <div>
-                  <Input
-                    label="Subject"
-                    value=""
-                    placeholder="How can I help you?"
-                    // className={//   "shadow-lg shadow-purple-500/20"}
-                    onChange={() => {}}
+                  <Controller
+                    name="email"
+                    control={control}
+                    rules={{
+                      required: "Email is required",
+                      pattern: {
+                        value: /^\S+@\S+$/i,
+                        message: "Invalid email",
+                      },
+                    }}
+                    render={({ field }) => (
+                      <Input
+                        label="Mail"
+                        placeholder="your.email@example.com"
+                        error={errors.email && errors.email.message}
+                        {...field}
+                      />
+                    )}
                   />
                 </div>
 
                 {/* Message Field */}
                 <div>
-                  <Input
-                    label="Message"
-                    value=""
-                    placeholder="Tell me about your project..."
-                    // className={//   "shadow-lg shadow-purple-500/20"}
-                    onChange={() => {}}
+                  <Controller
+                    name="message"
+                    control={control}
+                    rules={{ required: "Message is required" }}
+                    render={({ field }) => (
+                      <>
+                        <label>Message</label>
+                        <textarea
+                          {...field}
+                          placeholder="Your message"
+                          className="w-full outline-none p-2 rounded-lg bg-white/5 border-2 border-white/10 text-white placeholder:text-white/30 focus:border-purple-500/50 focus:ring-purple-500/20 transition-all"
+                          rows={4}
+                        />
+                      </>
+                    )}
                   />
                 </div>
 
@@ -119,11 +175,12 @@ const Contact = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Button
-                    // type="submit"
+                    type="submit"
+                    disabled={isSubmitting}
                     className="w-full cursor-pointer rounded-lg flex items-center justify-center py-2 px-3 text-black/60 font-medium bg-linear-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 border-0 shadow-lg shadow-purple-500/50"
                   >
                     <Send className="w-4 h-4 mr-2" />
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </motion.div>
               </form>
