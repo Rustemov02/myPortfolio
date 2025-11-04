@@ -49,8 +49,9 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-white/70 text-lg max-w-xl mb-8 mx-auto lg:mx-0 leading-relaxed"
           >
-            I build modern, accessible React applications with clean code and a
-            strong focus on great user experience.
+            I build modern, high-performance web applications using Next.js,
+            React, and Tailwind CSS — with clean code, smooth performance, and a
+            strong focus on user experience.{" "}
           </motion.p>
 
           <motion.div
@@ -61,7 +62,11 @@ const Hero = () => {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                onClick={() => {}}
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 size="lg"
                 className="relative cursor-pointer rounded-lg py-2 overflow-hidden bg-linear-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-500 hover:via-pink-500 hover:to-cyan-500 border-0 shadow-2xl shadow-purple-500/50 group px-8"
               >

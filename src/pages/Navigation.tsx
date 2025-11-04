@@ -14,9 +14,14 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
   const scrollToSection = (section: string) => {
+    document
+      .getElementById(`${section.substring(1)}`)
+      ?.scrollIntoView({ behavior: "smooth" });
     setActiveSection(section.substring(1));
   };
+
   const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {

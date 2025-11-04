@@ -1,66 +1,8 @@
 import { Award, Briefcase, Calendar, Code2, GraduationCap } from "lucide-react";
 import { motion } from "motion/react";
-
+import info from "../assets/details/info.json";
 const About = () => {
-  const skills = [
-    { name: "React", color: "from-cyan-500 to-blue-500", icon: "⚛️" },
-    { name: "TypeScript", color: "from-blue-500 to-indigo-500", icon: "📘" },
-    { name: "Next.js", color: "from-indigo-500 to-purple-500", icon: "▲" },
-    { name: "Tailwind CSS", color: "from-purple-500 to-pink-500", icon: "🎨" },
-    { name: "Node.js", color: "from-green-500 to-emerald-500", icon: "🟢" },
-    { name: "UI/UX Design", color: "from-pink-500 to-rose-500", icon: "✨" },
-    {
-      name: "Motion/Framer",
-      color: "from-orange-500 to-amber-500",
-      icon: "🎬",
-    },
-    { name: "GraphQL", color: "from-violet-500 to-purple-500", icon: "◈" },
-    { name: "JavaScript", color: "from-yellow-500 to-amber-500", icon: "⚡" },
-    { name: "CSS/SCSS", color: "from-blue-400 to-cyan-400", icon: "🎯" },
-    { name: "Git", color: "from-red-500 to-orange-500", icon: "🔀" },
-    {
-      name: "Responsive Design",
-      color: "from-emerald-500 to-teal-500",
-      icon: "📱",
-    },
-  ];
-
-  const timeline = [
-    {
-      icon: Briefcase,
-      title: "Senior Frontend Developer",
-      company: "Tech Innovators Inc.",
-      period: "2022 - Present",
-      description:
-        "Leading frontend architecture and mentoring junior developers.",
-      color: "from-purple-500 to-pink-500",
-    },
-    {
-      icon: Code2,
-      title: "Frontend Developer",
-      company: "Digital Solutions Co.",
-      period: "2020 - 2022",
-      description: "Built responsive web applications using React and Next.js.",
-      color: "from-cyan-500 to-blue-500",
-    },
-    {
-      icon: GraduationCap,
-      title: "B.S. Computer Science",
-      company: "Stanford University",
-      period: "2016 - 2020",
-      description:
-        "Specialized in Human-Computer Interaction and Web Technologies.",
-      color: "from-indigo-500 to-purple-500",
-    },
-    {
-      icon: Award,
-      title: "Web Design Award",
-      company: "CSS Design Awards",
-      period: "2023",
-      description: "Honored for exceptional UI/UX design and innovation.",
-      color: "from-amber-500 to-orange-500",
-    },
-  ];
+  const { skills, timeline } = info;
 
   return (
     <section
@@ -95,16 +37,17 @@ const About = () => {
             <div className="relative z-10">
               <h3 className="mb-4 text-purple-300">Who I Am</h3>
               <p className="text-white/80 text-lg leading-relaxed mb-4">
-                I'm a creative frontend developer who transforms ideas into
-                elegant digital experiences. With over 5 years of crafting
-                pixel-perfect interfaces, I blend technical expertise with
-                artistic vision to build web applications that users love.
+                I’m a frontend developer with around 1 year of experience,
+                passionate about turning ideas into clean, modern, and
+                user-friendly web experiences. I work mainly with Next.js,
+                React, and Tailwind CSS to build fast and responsive
+                applications that feel smooth and intuitive.
               </p>
               <p className="text-white/70 leading-relaxed">
-                My approach combines cutting-edge technologies with timeless
-                design principles, ensuring every project is not just
-                functional, but memorable. I thrive on challenges and
-                continuously push the boundaries of what's possible on the web.
+                My focus is on writing clean, maintainable code and creating
+                interfaces that not only work well but also feel great to use.
+                I’m constantly learning and improving, always exploring new ways
+                to deliver better user experiences on the web.
               </p>
             </div>
           </div>

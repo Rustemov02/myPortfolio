@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import Input from "../components/Input";
 import { useForm, Controller } from "react-hook-form";
+import { toast } from "react-toastify";
+import CustomToast from "../components/CustomToast";
 
 type FormData = {
   name: string;
@@ -58,7 +60,7 @@ const Contact = () => {
   const onSubmit = async (data: FormData) => {
     console.log(data);
     try {
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch("https://formspree.io/f/xdkprdej", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -67,13 +69,19 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        setStatus("success");
+        toast(
+          <CustomToast
+            title="Success"
+            message="Operation Completed"
+            variant="success"
+          />
+        );
         reset();
       } else {
-        setStatus("error");
+        // setStatus("error");
       }
     } catch {
-      setStatus("error");
+      // setStatus("error");
     }
 
     reset();

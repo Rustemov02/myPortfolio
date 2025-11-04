@@ -4,6 +4,7 @@ import Footer from "./pages/Footer";
 import Hero from "./pages/Hero";
 import Navigation from "./pages/Navigation";
 import Projects from "./pages/Projects";
+import ToastProvider from "./utils/ToastProvider";
 
 const App = () => {
   return (
@@ -31,6 +32,8 @@ const App = () => {
           </main>
         </div>
       </div>
+
+      <ToastProvider />
     </div>
   );
 };
