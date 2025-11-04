@@ -3,6 +3,7 @@ import { Card } from "../components/Card";
 import Badge from "../components/Badge";
 import CustomDialog from "../components/CustomDialog";
 import { useState } from "react";
+import { projects } from "../constants/projects";
 
 export interface Project {
   id: number;
@@ -16,46 +17,6 @@ export interface Project {
 }
 
 const Projects = () => {
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "Analytics Dashboard",
-      description:
-        "A comprehensive analytics platform with real-time data visualization.",
-      longDescription:
-        "Built a full-featured analytics dashboard for tracking business metrics with real-time updates, interactive charts, and customizable widgets. Implemented using React, TypeScript, and Recharts for data visualization. The platform handles thousands of data points efficiently with optimized rendering and state management.",
-      image:
-        "https://images.unsplash.com/photo-1634836023845-eddbfe9937da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkYXNoYm9hcmQlMjBkYXJrfGVufDF8fHx8MTc2MTkzMzc0NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      tags: ["React", "TypeScript", "Recharts", "Tailwind CSS"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 2,
-      title: "Mobile Banking App",
-      description:
-        "Modern mobile banking interface with seamless UX and security.",
-      longDescription:
-        "Developed a mobile-first banking application with emphasis on security and user experience. Features include biometric authentication, transaction history, budget tracking, and instant transfers. Built with React Native and integrated with secure payment APIs.",
-      image:
-        "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzYxODIyMzM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      tags: ["React Native", "Node.js", "Express", "MongoDB"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 3,
-      title: "E-Commerce Platform",
-      description: "Full-stack online store with modern shopping experience.",
-      longDescription:
-        "Created a complete e-commerce solution with product catalog, shopping cart, checkout process, and admin dashboard. Implemented features like product search, filtering, user reviews, and order tracking. Utilized Next.js for SEO optimization and server-side rendering.",
-      image:
-        "https://images.unsplash.com/photo-1744446979012-2029135f0d4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwbW9kZXJufGVufDF8fHx8MTc2MTkzMzc0NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      tags: ["Next.js", "Stripe", "PostgreSQL", "Prisma"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-  ];
   const [isOpen, setIsOpen] = useState(false);
 
   return (
