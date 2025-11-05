@@ -1,10 +1,23 @@
 import birilmek from "../assets/birilmek.jpg";
 import booking from "../assets/booking.png";
 import etihi from "../assets/etihi.png";
+import hiri from "../assets/Hiri.svg";
 
 export const projects = [
   {
     id: 1,
+    title: "HIRI",
+    description:
+      "Modern, multilingual job platform with a clean and responsive design.",
+    longDescription:
+      "Hiri is a modern and responsive job platform that connects job seekers and companies through a clean, user-friendly interface. It features multilingual support, dynamic vacancy listings, and a professional design focused on accessibility and usability.",
+    image: hiri,
+    tags: ["ReactJs", "NextJs", "TailwindCSS"],
+    liveUrl: "https://hiri.siesco.studio/en",
+    githubUrl: "",
+  },
+  {
+    id: 2,
     title: "ETİHİ",
     description:
       "ETİHİ is the official platform of Azerbaijan’s Teachers’ Union, sharing news and supporting educators’ rights and collaboration.",
@@ -12,11 +25,11 @@ export const projects = [
       "ETİHİ is the digital platform of Azerbaijan’s Teachers’ Trade Union, providing news, organizational information, and a hub for educators’ rights and collaboration.",
     image: etihi,
     tags: ["Next", "TailwindCSS"],
-    liveUrl: "etihi.org",
+    liveUrl: "https://etihi.org/",
     githubUrl: "",
   },
   {
-    id: 2,
+    id: 3,
     title: "Online Booking",
     description:
       "A modern full-stack hotel booking platform built with TypeScript, designed for smooth browsing and reservation experiences.",
@@ -24,11 +37,11 @@ export const projects = [
       "Booking is a full-stack hotel reservation system built with TypeScript, offering a seamless interface to browse hotels, filter options, and make bookings. It combines a robust backend with a clean frontend to deliver a complete booking experience.",
     image: booking,
     tags: ["ReactJs", "TailwindCss", "MongoDB", "Express"],
-    liveUrl: "https://booking-02.vercel.app/hotel",
+    liveUrl: "https://booking-02.vercel.app",
     githubUrl: "https://github.com/Rustemov02/booking",
   },
   {
-    id: 3,
+    id: 4,
     title: "Birilmek",
     description:
       "A clean and minimal e-commerce project for showcasing handmade crafts with style and simplicity.",

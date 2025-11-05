@@ -6,7 +6,7 @@ import { useState } from "react";
 import { projects } from "../constants/projects";
 
 export interface Project {
-  id: number;
+  id: number | null;
   title: string;
   description: string;
   longDescription: string;
@@ -18,6 +18,8 @@ export interface Project {
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   return (
     <section
@@ -52,7 +54,7 @@ const Projects = () => {
               <Card
                 className="group relative overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer h-full"
                 onClick={() => {
-                  //  setSelectedProject(project)
+                  setSelectedIndex(project.id - 1);
                   setIsOpen(true);
                 }}
               >
@@ -102,7 +104,7 @@ const Projects = () => {
 
       {/* Project Details Modal */}
       <CustomDialog
-        data={projects[2]}
+        data={projects[selectedIndex!]}
         open={isOpen}
         onOpenChange={() => setIsOpen(false)}
       />

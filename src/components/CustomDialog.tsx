@@ -12,6 +12,7 @@ interface CustomDialogProps {
 }
 
 const CustomDialog = ({ open, onOpenChange, data }: CustomDialogProps) => {
+  if (!data) return;
   const { title, longDescription, image, liveUrl, githubUrl } = data;
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
@@ -55,21 +56,25 @@ const CustomDialog = ({ open, onOpenChange, data }: CustomDialogProps) => {
 
             {/* Action Buttons */}
             <div className="flex items-center gap-4 pt-4">
-              <Button
-                className="cursor-pointer flex-1 py-2 outline-none rounded-lg flex items-center justify-center bg-linear-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 border-0"
-                // onClick={() => window.open(selectedProject.liveUrl, "_blank")}
-              >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View Live
-              </Button>
-              <Button
-                // variant="outline"
-                className="cursor-pointer flex-1 py-2 outline-none rounded-lg flex items-center justify-center bg-white/5 border-white/10 hover:bg-white/10 text-white"
-                // onClick={() => window.open(selectedProject.githubUrl, "_blank")}
-              >
-                <Github className="w-4 h-4 mr-2" />
-                Source Code
-              </Button>
+              {liveUrl && (
+                <Button
+                  className="cursor-pointer flex-1 py-2 outline-none rounded-lg flex items-center justify-center bg-linear-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 border-0"
+                  onClick={() => window.open(liveUrl, "_blank")}
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  View Live
+                </Button>
+              )}
+              {githubUrl && (
+                <Button
+                  // variant="outline"
+                  className="cursor-pointer flex-1 py-2 outline-none rounded-lg flex items-center justify-center bg-white/5 border-white/10 hover:bg-white/10 text-white"
+                  onClick={() => window.open(githubUrl, "_blank")}
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  Source Code
+                </Button>
+              )}
             </div>
           </div>
         </Flex>

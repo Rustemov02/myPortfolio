@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import { Menu, X } from "lucide-react";
-
+import logo from "../assets/myLogo.svg";
 const Navigation = () => {
   const navItems = [
     { name: "Home", href: "#home" },
@@ -62,10 +62,10 @@ const Navigation = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-xl text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-cyan-400 cursor-pointer"
+            className="text-xl"
             onClick={() => scrollToSection("#home")}
           >
-            &lt;AM /&gt;
+            <img src={logo} alt="" className="w-40 h-12" />
           </motion.div>
 
           {/* Desktop Navigation */}
