@@ -18,7 +18,7 @@ const Hero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
     >
       <AnimatedBackground />
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -33,7 +33,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mb-6"
+            className="mb-6 mt-12 md:mt-0"
           >
             <div className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-linear-to-r from-purple-500/10 via-pink-500/10 to-cyan-500/10 backdrop-blur-md border border-white/10">
               <Sparkles className="w-8 h-8 text-purple-400" />
@@ -58,7 +58,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button

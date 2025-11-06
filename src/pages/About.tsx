@@ -53,32 +53,6 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Highlights Grid */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
-        >
-          {highlights.map((highlight, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="glass-card p-6 rounded-xl border border-white/10 backdrop-blur-md bg-white/5 text-center group"
-            >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-white/5 mb-3 group-hover:bg-white/10 transition-colors">
-                <highlight.icon className={`w-6 h-6 ${highlight.color}`} />
-              </div>
-              <p className="text-white/80 text-sm">{highlight.text}</p>
-            </motion.div>
-          ))}
-        </motion.div> */}
-
         {/* Skills Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,13 +61,13 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-12"
         >
-          <div className="glass-card p-8 rounded-2xl border border-white/10 backdrop-blur-md bg-white/5 shadow-xl">
+          <div className="glass-card p-4 md:p-8 rounded-2xl border border-white/10 backdrop-blur-md bg-white/5 shadow-xl">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-1 h-8 bg-linear-to-b from-purple-500 to-cyan-500 rounded-full" />
               <h3 className="text-white/90">My Skills</h3>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 flex-col sm:flex-row justify-center sm:justify-start">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -113,11 +87,11 @@ const About = () => {
                     />
 
                     {/* Content */}
-                    <div className="relative z-10 flex items-center gap-2.5">
-                      <span className="text-xl group-hover:scale-110 transition-transform duration-300">
+                    <div className="relative z-10 flex items-center justify-center sm:justify-start gap-2.5">
+                      <span className="text-lg sm:text-xl group-hover:scale-110 transition-transform duration-300">
                         {skill.icon}
                       </span>
-                      <span className="text-white/90 group-hover:text-white transition-colors">
+                      <span className="text-white/90 group-hover:text-white transition-colors text-xl sm:text-[16px]">
                         {skill.name}
                       </span>
                     </div>
@@ -160,7 +134,7 @@ const About = () => {
                     {/* Icon */}
                     <div className="relative shrink-0">
                       <div
-                        className={`w-12 h-12 rounded-xl bg-linear-to-br ${item.color} p-0.5 group-hover:scale-110 transition-transform`}
+                        className={`w-6 sm:w-12 h-6 sm:h-12 rounded-xl bg-linear-to-br ${item.color} p-0.5 group-hover:scale-110 transition-transform`}
                       >
                         <div className="w-full h-full rounded-xl bg-black/90 flex items-center justify-center">
                           <item.icon className="w-6 h-6 text-white" />

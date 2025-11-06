@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/myLogo.svg";
+import logo from "../assets/logo.svg";
 const Navigation = () => {
   const navItems = [
     { name: "Home", href: "#home" },
@@ -24,9 +24,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      }
+      setScrolled(window.scrollY > 50);
 
       const sections = navItems.map((item) => item.href.substring(1));
       const currentSection = sections.find((section) => {
@@ -46,15 +44,14 @@ const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-lg"
-          : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "bg-black/80 backdrop-blur-xl shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +62,7 @@ const Navigation = () => {
             className="text-xl"
             onClick={() => scrollToSection("#home")}
           >
-            <img src={logo} alt="" className="w-40 h-12" />
+            <img src={logo} alt="" className="h-24" />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -137,7 +134,12 @@ const Navigation = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setTimeout(()=>{
+                      scrollToSection(item.href);
+                    },500)
+                  }}
                   className={`block w-full text-left py-2 px-4 rounded-lg transition-colors  cursor-pointer ${
                     activeSection === item.href.substring(1)
                       ? "text-white bg-white/10"

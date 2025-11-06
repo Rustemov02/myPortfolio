@@ -1,5 +1,5 @@
-import { Heart } from "lucide-react";
 import { motion } from "motion/react";
+import logo from "../assets/logo.svg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,11 +14,12 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="mb-4 text-xl text-purple-400">&lt;AM /&gt;</div>
+          <div className="-mt-10 text-xl text-purple-400 flex items-center justify-center">
+            {" "}
+            <img src={logo} alt="" className="h-24 w-20 scale-1.8" />
+          </div>
           <p className="text-white/60 mb-4 flex items-center justify-center gap-2">
-            Designed & Built with
-            <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
-            by Rustamov
+            Designed & Built with by Rustamov
           </p>
           <p className="text-white/40 text-sm">
             © {currentYear} All rights reserved.

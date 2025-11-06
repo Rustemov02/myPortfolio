@@ -1,14 +1,6 @@
 import { motion } from "motion/react";
 import Button from "../components/Button";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-  Twitter,
-} from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import Input from "../components/Input";
 import { useForm, Controller } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -20,28 +12,40 @@ type FormData = {
   message: string;
 };
 
+type SocialType = { icon: any; url: string; label: string; color: string };
+
 const Contact = () => {
-  const socialLinks = [
-    { icon: Github, url: "#", label: "GitHub", color: "hover:text-purple-400" },
+  const socialLinks: SocialType[] = [
+    {
+      icon: Github,
+      url: "https://github.com/Rustemov02?tab=repositories",
+      label: "GitHub",
+      color: "hover:text-purple-400",
+    },
     {
       icon: Linkedin,
-      url: "#",
+      url: "https://www.linkedin.com/in/bunyamin-rustamov-7a9359224/",
       label: "LinkedIn",
       color: "hover:text-cyan-400",
     },
-    { icon: Twitter, url: "#", label: "Twitter", color: "hover:text-blue-400" },
+    {
+      icon: Send,
+      url: "@rustamovb0",
+      label: "Telegram",
+      color: "hover:text-blue-400",
+    },
     {
       icon: Mail,
-      url: "mailto:alex@example.com",
+      url: "mailto:rustmovbunyamin@gmail.com",
       label: "Email",
       color: "hover:text-pink-400",
     },
   ];
 
   const contactInfo = [
-    { icon: Mail, text: "alex.morgan@example.com", color: "text-purple-400" },
-    { icon: Phone, text: "+1 (555) 123-4567", color: "text-cyan-400" },
-    { icon: MapPin, text: "San Francisco, CA", color: "text-pink-400" },
+    { icon: Mail, text: "rustmovbunyamin@gmail.com", color: "text-purple-400" },
+    { icon: Phone, text: "+994 (55) 778 33 24", color: "text-cyan-400" },
+    { icon: MapPin, text: "Azerbaijan, Baku", color: "text-pink-400" },
   ];
 
   const {
@@ -57,6 +61,16 @@ const Contact = () => {
     },
   });
 
+  const handleSocialLinks = (social: SocialType) => {
+    if (social.label === "Telegram" || social.label === 'Email') {
+      navigator.clipboard.writeText(social.label);
+      toast(
+        <CustomToast title="Success" message="Link copied" variant="success" />
+      );
+    }else{
+      window.open(social.url,"_blank")
+    }
+  };
   const onSubmit = async (data: FormData) => {
     console.log(data);
     try {
@@ -230,21 +244,22 @@ const Contact = () => {
               <h3 className="mb-6 text-white/90">Connect With Me</h3>
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social, index) => (
-                  <motion.a
+                  <motion.div
                     key={index}
-                    href={social.url}
-                    target="_blank"
+                    // href={social.url}
+                    // target="_blank"
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                    // transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     whileHover={{ scale: 1.05, y: -5 }}
-                    className={`flex items-center justify-center gap-3 p-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all text-white/70 ${social.color}`}
+                    className={`flex cursor-pointer items-center justify-center gap-3 p-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 text-white/70 ${social.color}`}
+                    onClick={() => handleSocialLinks(social)}
                   >
                     <social.icon className="w-5 h-5" />
                     <span>{social.label}</span>
-                  </motion.a>
+                  </motion.div>
                 ))}
               </div>
             </div>
