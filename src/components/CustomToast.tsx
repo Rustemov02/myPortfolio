@@ -1,5 +1,4 @@
-import type { ToastContentProps } from "react-toastify";
-import { X, CheckCircle2, AlertTriangle, Info } from "lucide-react";
+import { CheckCircle2, AlertTriangle, Info } from "lucide-react";
 
 type Variant = "success" | "error" | "info" | "warning";
 
@@ -51,14 +50,6 @@ export default function CustomToast({
           </button>
         )}
       </div>
-
-      {/* <button
-        onClick={closeToast}
-        className="ml-2 p-1 rounded hover:bg-gray-100"
-        aria-label="Close toast"
-      >
-        <X className="w-4 h-4 text-gray-500" />
-      </button> */}
     </div>
   );
 }

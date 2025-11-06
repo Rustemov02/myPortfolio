@@ -2,7 +2,7 @@ import { useRef } from "react";
 import AnimatedBackground from "../components/AnimatedBackground";
 import { motion, useScroll, useTransform } from "motion/react";
 import me from "@/assets/me-3.jpg";
-import { ArrowRight, Badge, Eye, Sparkles } from "lucide-react";
+import { ArrowRight, Eye, Sparkles } from "lucide-react";
 import Button from "../components/Button";
 
 const Hero = () => {

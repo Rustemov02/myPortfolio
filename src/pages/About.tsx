@@ -1,6 +1,7 @@
-import { Award, Briefcase, Calendar, Code2, GraduationCap } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { motion } from "motion/react";
-import info from "../assets/details/info.json";
+import info from "../constants/skills";
+
 const About = () => {
   const { skills, timeline } = info;
 

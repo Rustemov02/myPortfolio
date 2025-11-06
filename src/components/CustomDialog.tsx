@@ -1,9 +1,8 @@
-import { Dialog, Flex, Text, TextField } from "@radix-ui/themes";
+import { Dialog, Flex } from "@radix-ui/themes";
 import Button from "./Button";
 import { ExternalLink, Github, X } from "lucide-react";
 import Badge from "./Badge";
 import type { Project } from "../pages/Projects";
-// import { RemoveScroll } from "react-remove-scroll";
 
 interface CustomDialogProps {
   data: Project;
