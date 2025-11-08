@@ -2,7 +2,7 @@ import birilmek from "../assets/birilmek.jpg";
 import booking from "../assets/booking.png";
 import etihi from "../assets/etihi.png";
 import hiri from "../assets/Hiri.svg";
-
+import propertyPulse from "../assets/propertyPulse-wallpaper.png";
 export const projects = [
   {
     id: 1,
@@ -30,6 +30,19 @@ export const projects = [
   },
   {
     id: 3,
+    title: "Property Pulse",
+    description:
+      "Property Pulse is a platform for renting and listing properties easily.",
+    longDescription:
+      "It is a sleek rental‑platform where tenants can find their dream place and owners can list properties for long‑term or short‑term stays.",
+    image: propertyPulse,
+    tags: ["NextJs", "TailwindCss", "MongoDB", "OAuth", "Cloudinary"],
+    liveUrl: "https://yourproperties.vercel.app/",
+    githubUrl: "https://github.com/Rustemov02/Coursera-NextJs-Properties",
+  },
+
+  {
+    id: 4,
     title: "Online Booking",
     description:
       "A modern full-stack hotel booking platform built with TypeScript, designed for smooth browsing and reservation experiences.",
@@ -41,7 +54,7 @@ export const projects = [
     githubUrl: "https://github.com/Rustemov02/booking",
   },
   {
-    id: 4,
+    id: 5,
     title: "Birilmek",
     description:
       "A clean and minimal e-commerce project for showcasing handmade crafts with style and simplicity.",
