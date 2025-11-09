@@ -5,6 +5,8 @@ import info from "../constants/skills";
 const About = () => {
   const { skills, timeline } = info;
 
+  const isDesktop = typeof window !== "undefined" && window.innerWidth > 768;
+
   return (
     <section
       id="about"
@@ -68,21 +70,24 @@ const About = () => {
               <h3 className="text-white/90">My Skills</h3>
             </div>
 
-            <div className="flex flex-wrap gap-3 flex-col sm:flex-row justify-center sm:justify-start">
-              {skills.map((skill, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-wrap gap-3 flex-col sm:flex-row justify-center sm:justify-start"
+            >
+              {skills.map((skill) => (
                 <motion.div
                   key={skill.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
-                  whileHover={{ scale: 1.08, y: -4 }}
+                  {...(isDesktop ? { whileHover: { scale: 1.08, y: -4 } } : {})}
+                  transition={{ duration: 0.3 }}
                   className="group"
                 >
                   <div
                     className={`relative overflow-hidden rounded-full px-5 py-3 bg-linear-to-r ${skill.color} bg-opacity-10 backdrop-blur-sm border border-white/10 hover:border-white/30 transition-all cursor-pointer shadow-lg hover:shadow-xl`}
                   >
-                    {/* Linear overlay on hover */}
+                    {/* Hover overlay */}
                     <div
                       className={`absolute inset-0 bg-linear-to-r ${skill.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
                     />
@@ -97,14 +102,14 @@ const About = () => {
                       </span>
                     </div>
 
-                    {/* Glow effect */}
+                    {/* Glow */}
                     <div
                       className={`absolute inset-0 bg-linear-to-r ${skill.color} opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300`}
                     />
                   </div>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 

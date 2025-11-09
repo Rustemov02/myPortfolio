@@ -3,7 +3,7 @@ import Button from "./Button";
 import { ExternalLink, Github, X } from "lucide-react";
 import Badge from "./Badge";
 import type { Project } from "../pages/Projects";
-
+import { motion } from "motion/react";
 interface CustomDialogProps {
   data: Project;
   open: boolean;
@@ -27,9 +27,10 @@ const CustomDialog = ({ open, onOpenChange, data }: CustomDialogProps) => {
             alt="headImg"
             className="w-full max-h-[250px] object-cover"
           />
+          <div className="absolute inset-0 h-[20%] bg-linear-to-b from-black/80 to-black/0 pointer-events-none" />
           <X
             onClick={() => onOpenChange()}
-            className="absolute top-3 right-3 cursor-pointer text-white/60 w-4 h-4"
+            className="absolute top-3 right-3 cursor-pointer text-white/80 w-6 h-6"
           />
         </div>
 

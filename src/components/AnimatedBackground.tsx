@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 const AnimatedBackground = () => {
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden hidden md:block">
       <motion.div
         className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-3xl"
         animate={{
@@ -12,7 +12,7 @@ const AnimatedBackground = () => {
         }}
         transition={{
           duration: 10,
-          repeat: Infinity,
+          repeat: 0,
           ease: "easeInOut",
         }}
       />
@@ -25,7 +25,7 @@ const AnimatedBackground = () => {
         }}
         transition={{
           duration: 10,
-          repeat: Infinity,
+          repeat: 0,
           ease: "easeInOut",
         }}
       />
@@ -45,7 +45,7 @@ const AnimatedBackground = () => {
           }}
           transition={{
             duration: 3 + i * 0.5,
-            repeat: Infinity,
+            repeat: 0,
             delay: i * 0.2,
             ease: "easeInOut",
           }}

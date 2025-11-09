@@ -51,7 +51,9 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-black/80 backdrop-blur-xl shadow-lg" : "bg-transparent"
+        scrolled || isOpen
+          ? "bg-black/80 backdrop-blur-xl shadow-lg"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,14 +89,14 @@ const Navigation = () => {
                 )}
               </Button>
             ))}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
+            {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
               <Button
                 size="sm"
                 className="bg-linear-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 border-0 rounded-[20px] py-1 px-3 cursor-pointer"
                 onClick={() => scrollToSection("#contact")}
                 title="Let's Talk"
               />
-            </motion.div>
+            </motion.div> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -136,9 +138,9 @@ const Navigation = () => {
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   onClick={() => {
                     setIsOpen(false);
-                    setTimeout(()=>{
+                    setTimeout(() => {
                       scrollToSection(item.href);
-                    },500)
+                    }, 500);
                   }}
                   className={`block w-full text-left py-2 px-4 rounded-lg transition-colors  cursor-pointer ${
                     activeSection === item.href.substring(1)
@@ -149,7 +151,7 @@ const Navigation = () => {
                   {item.name}
                 </motion.button>
               ))}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
@@ -158,11 +160,14 @@ const Navigation = () => {
                 }}
               >
                 <Button
-                  className="w-full bg-linear-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 border-0"
-                  onClick={() => scrollToSection("#contact")}
+                  className="w-full bg-linear-to-r rounded-xl p-2 from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 border-0"
+                  onClick={() => {
+                    scrollToSection("#contact");
+                    setIsOpen(false);
+                  }}
                   title="Let's Talk"
                 />
-              </motion.div>
+              </motion.div> */}
             </div>
           </motion.div>
         )}
