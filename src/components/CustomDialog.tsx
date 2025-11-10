@@ -3,7 +3,6 @@ import Button from "./Button";
 import { ExternalLink, Github, X } from "lucide-react";
 import Badge from "./Badge";
 import type { Project } from "../pages/Projects";
-import { motion } from "motion/react";
 interface CustomDialogProps {
   data: Project;
   open: boolean;
