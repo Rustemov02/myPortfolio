@@ -1,4 +1,4 @@
-import birilmek from "../assets/birilmek.jpg";
+import birilmek from "../assets/birilmek-cover.png";
 import booking from "../assets/booking.png";
 import etihi from "../assets/etihi.png";
 import hiri from "../assets/Hiri.svg";
