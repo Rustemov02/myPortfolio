@@ -3,6 +3,8 @@ import booking from "../assets/booking.png";
 import etihi from "../assets/etihi.png";
 import hiri from "../assets/Hiri.svg";
 import propertyPulse from "../assets/propertyPulse-wallpaper.png";
+import academicStudies from "../assets/academic-studies.jpg";
+
 export const projects = [
   {
     id: 1,
@@ -30,6 +32,17 @@ export const projects = [
   },
   {
     id: 3,
+    title: "Academic Studies",
+    description: "This is a professional website for an educational center called Academic Studies. The site helps students find help with their lessons, research, and studying abroad.I focused on making the website look clean, serious, and very easy to use.",
+    longDescription: "The goal of this project was to build a helpful platform for students and researchers. The website shows many services, like help with writing academic papers and finding universities in other countries.",
+    image: academicStudies,
+    tags: ["NextJs", "TailwindCSS", "Supabase", "MongoDB"],
+    liveUrl: "https://academic-studies.az/",
+    githubUrl: "",
+  },
+
+  {
+    id: 4,
     title: "Property Pulse",
     description:
       "Property Pulse is a platform for renting and listing properties easily.",
@@ -42,7 +55,7 @@ export const projects = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Online Booking",
     description:
       "A modern full-stack hotel booking platform built with TypeScript, designed for smooth browsing and reservation experiences.",
@@ -54,7 +67,7 @@ export const projects = [
     githubUrl: "https://github.com/Rustemov02/booking",
   },
   {
-    id: 5,
+    id: 6,
     title: "Birilmek",
     description:
       "A clean and minimal e-commerce project for showcasing handmade crafts with style and simplicity.",

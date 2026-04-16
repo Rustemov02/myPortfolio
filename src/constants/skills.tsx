@@ -29,9 +29,9 @@ const info = {
       icon: Briefcase,
       title: "Junior Frontend Developer",
       company: "Siesco MMC.",
-      period: "Dec 2024 - Present",
+      period: "Dec 2024 - Jan 2026",
       description:
-        "I actively work on real-world projects, using React, Next.js, and Tailwind CSS to turn ideas into smooth, modern, and visually clean web experiences.",
+        "I actively work on real-world projects, using React, Next.js, and Tailwind CSS to turn ideas into smooth, modern, and visually clean web experiences.Collaborated with backend team to design consistent API structures and integrated RESTAPIs and optimized performance for large-scale pages",
       color: "from-purple-500 to-pink-500",
     },
     {
@@ -40,7 +40,7 @@ const info = {
       company: "UCode Course.",
       period: "Oct 2022 - Jan 2023",
       description:
-        "I teach the basics of HTML, CSS, and JavaScript, helping others understand how modern websites are built from the ground up.",
+        "Mentored students in mastering HTML, CSS, and JavaScript fundamentals, guiding them through practical exercises to build solid frontend foundations.",
       color: "from-cyan-500 to-blue-500",
     },
     {

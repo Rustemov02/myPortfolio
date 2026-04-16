@@ -1,12 +1,20 @@
 {
   "skills": [
-    { "name": "CSS", "color": "from-blue-400 to-cyan-400", "icon": "🎯" },
+    {
+      "name": "CSS",
+      "color": "from-blue-400 to-cyan-400",
+      "icon": "🎯"
+    },
     {
       "name": "JavaScript",
       "color": "from-yellow-500 to-amber-500",
       "icon": "⚡"
     },
-    { "name": "React", "color": "from-cyan-500 to-blue-500", "icon": "⚛️" },
+    {
+      "name": "React",
+      "color": "from-cyan-500 to-blue-500",
+      "icon": "⚛️"
+    },
     {
       "name": "Redux Toolkit",
       "color": "from-purple-500 to-emerald-500",
@@ -42,7 +50,11 @@
       "color": "from-violet-500 to-purple-500",
       "icon": "◈"
     },
-    { "name": "Git", "color": "from-red-500 to-orange-500", "icon": "🔀" },
+    {
+      "name": "Git",
+      "color": "from-red-500 to-orange-500",
+      "icon": "🔀"
+    },
     {
       "name": "Responsive Design",
       "color": "from-emerald-500 to-teal-500",
@@ -54,7 +66,7 @@
       "icon": "Briefcase",
       "title": "Junior Frontend Developer",
       "company": "Siesco MMC.",
-      "period": "Dec 2024 - Present",
+      "period": "Dec 2024 - Jan 2026",
       "description": "I actively work on real-world projects, using React, Next.js, and Tailwind CSS to turn ideas into smooth, modern, and visually clean web experiences.",
       "color": "from-purple-500 to-pink-500"
     },

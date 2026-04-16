@@ -50,71 +50,62 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || isOpen
-          ? "bg-black/80 backdrop-blur-xl shadow-lg"
+          ? "bg-black/40 backdrop-blur-md border-b border-white/5"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-xl"
+            className="text-lg font-bold tracking-tighter cursor-pointer flex items-center gap-2"
             onClick={() => scrollToSection("#home")}
           >
-            <img src={logo} alt="" className="h-24" />
+            <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
+              <span className="text-black text-xl font-black">B</span>
+            </div>
+            {/* <span className="hidden sm:inline">BUNYAMIN</span> */}
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navItems.map((item) => (
-              <Button
+              <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="relative text-white/70 hover:text-white transition-colors group cursor-pointer"
-                title={item.name}
+                className={`relative text-sm font-medium transition-all duration-300 cursor-pointer ${
+                  activeSection === item.href.substring(1)
+                    ? "text-white"
+                    : "text-zinc-500 hover:text-white"
+                }`}
               >
+                {item.name}
                 {activeSection === item.href.substring(1) && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-purple-500 to-cyan-500"
-                    transition={{
-                      type: "spring",
-                      bounce: 0.2,
-                      duration: 0.6,
-                    }}
+                    className="absolute -bottom-1 left-0 right-0 h-px bg-white"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
-              </Button>
+              </button>
             ))}
-            {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
-              <Button
-                size="sm"
-                className="bg-linear-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 border-0 rounded-[20px] py-1 px-3 cursor-pointer"
-                onClick={() => scrollToSection("#contact")}
-                title="Let's Talk"
-              />
-            </motion.div> */}
+            
+            <button
+              onClick={() => scrollToSection("#contact")}
+              className="px-5 py-2 rounded-full border border-zinc-800 text-sm font-medium hover:bg-white hover:text-black transition-all cursor-pointer"
+            >
+              Let's talk
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            // onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white/70 hover:text-white transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors cursor-pointer"
           >
-            {isOpen ? (
-              <X
-                className="w-6 h-6 cursor-pointer"
-                onClick={() => setIsOpen(false)}
-              />
-            ) : (
-              <Menu
-                className="w-6 h-6 cursor-pointer"
-                onClick={() => setIsOpen(true)}
-              />
-            )}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -123,51 +114,37 @@ const Navigation = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden absolute top-20 left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-zinc-900"
           >
-            <div className="px-4 py-6 space-y-4">
-              {navItems.map((item, index) => (
-                <motion.button
+            <div className="px-6 py-8 flex flex-col gap-6">
+              {navItems.map((item) => (
+                <button
                   key={item.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
                   onClick={() => {
                     setIsOpen(false);
-                    setTimeout(() => {
-                      scrollToSection(item.href);
-                    }, 500);
+                    setTimeout(() => scrollToSection(item.href), 100);
                   }}
-                  className={`block w-full text-left py-2 px-4 rounded-lg transition-colors  cursor-pointer ${
+                  className={`text-2xl font-semibold transition-colors text-left cursor-pointer ${
                     activeSection === item.href.substring(1)
-                      ? "text-white bg-white/10"
-                      : "text-white/70 hover:text-white hover:bg-white/5"
+                      ? "text-white"
+                      : "text-zinc-600"
                   }`}
                 >
                   {item.name}
-                </motion.button>
+                </button>
               ))}
-              {/* <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: navItems.length * 0.1,
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  setTimeout(() => scrollToSection("#contact"), 100);
                 }}
+                className="mt-4 px-6 py-3 rounded-xl bg-white text-black font-semibold text-center cursor-pointer"
               >
-                <Button
-                  className="w-full bg-linear-to-r rounded-xl p-2 from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 border-0"
-                  onClick={() => {
-                    scrollToSection("#contact");
-                    setIsOpen(false);
-                  }}
-                  title="Let's Talk"
-                />
-              </motion.div> */}
+                Let's talk
+              </button>
             </div>
           </motion.div>
         )}
