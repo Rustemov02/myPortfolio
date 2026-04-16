@@ -1,4 +1,3 @@
-import { Calendar } from "lucide-react";
 import { motion } from "motion/react";
 import info from "../constants/skills";
 

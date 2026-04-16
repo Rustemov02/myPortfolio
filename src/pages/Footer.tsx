@@ -1,5 +1,4 @@
-import { motion } from "motion/react";
-import logo from "../assets/logo.svg";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

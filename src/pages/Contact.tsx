@@ -1,7 +1,5 @@
 import { motion } from "motion/react";
-import Button from "../components/Button";
 import { ArrowRight, Github, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
-import Input from "../components/Input";
 import { useForm, Controller } from "react-hook-form";
 import { toast } from "react-toastify";
 import CustomToast from "../components/CustomToast";

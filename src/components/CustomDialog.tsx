@@ -4,7 +4,7 @@ import { ExternalLink, Github, X } from "lucide-react";
 import Badge from "./Badge";
 import type { Project } from "../pages/Projects";
 interface CustomDialogProps {
-  data: Project;
+  data: Project | null;
   open: boolean;
   onOpenChange: () => void;
 }

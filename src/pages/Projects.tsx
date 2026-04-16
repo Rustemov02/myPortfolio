@@ -1,6 +1,4 @@
 import { motion } from "motion/react";
-import { Card } from "../components/Card";
-import Badge from "../components/Badge";
 import CustomDialog from "../components/CustomDialog";
 import { useState } from "react";
 import { projects } from "../constants/projects";

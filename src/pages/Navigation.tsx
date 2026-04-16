@@ -1,8 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
-import Button from "../components/Button";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/logo.svg";
 const Navigation = () => {
   const navItems = [
     { name: "Home", href: "#home" },
