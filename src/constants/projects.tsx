@@ -1,23 +1,23 @@
 import birilmek from "../assets/birilmek-cover.png";
 import booking from "../assets/booking.png";
 import etihi from "../assets/etihi.png";
-import hiri from "../assets/Hiri.svg";
+// import hiri from "../assets/Hiri.svg";
 import propertyPulse from "../assets/propertyPulse-wallpaper.png";
 import academicStudies from "../assets/academic-studies.jpg";
 
 export const projects = [
-  {
-    id: 1,
-    title: "HIRI",
-    description:
-      "Modern, multilingual job platform with a clean and responsive design.",
-    longDescription:
-      "Hiri is a modern and responsive job platform that connects job seekers and companies through a clean, user-friendly interface. It features multilingual support, dynamic vacancy listings, and a professional design focused on accessibility and usability.",
-    image: hiri,
-    tags: ["ReactJs", "NextJs", "TailwindCSS"],
-    liveUrl: "https://hiri.siesco.studio/en",
-    githubUrl: "",
-  },
+  // {
+  //   id: 1,
+  //   title: "HIRI",
+  //   description:
+  //     "Modern, multilingual job platform with a clean and responsive design.",
+  //   longDescription:
+  //     "Hiri is a modern and responsive job platform that connects job seekers and companies through a clean, user-friendly interface. It features multilingual support, dynamic vacancy listings, and a professional design focused on accessibility and usability.",
+  //   image: hiri,
+  //   tags: ["ReactJs", "NextJs", "TailwindCSS"],
+  //   liveUrl: "https://hiri.siesco.studio/en",
+  //   githubUrl: "",
+  // },
   {
     id: 2,
     title: "ETİHİ",
